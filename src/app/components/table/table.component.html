@@ -21,6 +21,7 @@
   </div>
 
   <div class="uk-container uk-animation-fade uk-width-1-1@m uk-card" style="background: transparent ">
+<!--    Todo-->
     <app-table-header></app-table-header>
 <!--    <ul class="uk-pagination">-->
 <!--      <li (click)="prevPage()"><a><span class="uk-margin-small-right" uk-pagination-previous></span> Previous</a></li>-->
@@ -71,8 +72,8 @@
         </thead>
         <tbody>
         <tr *ngFor="let item of source">
-          <td>{{ item.supplier.companyName }}</td>
-          <td>{{ item.buyer.companyName }}</td>
+          <td><span *ngIf="item.supplier">{{ item.supplier.companyName }}</span></td>
+          <td><span *ngIf="item.buyer">{{ item.buyer.companyName }}</span></td>
           <td>{{ item.cargo_description }}</td>
           <td></td>
           <td></td>

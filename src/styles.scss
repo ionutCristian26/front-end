@@ -5,3 +5,12 @@
 	color: #fff;
 	background-color: #f0506e;
 }
+
+.page-item.active .page-link {
+  background-color: #324860;
+  border-color: #324860;
+}
+
+.page-link {
+  color: #324860;
+}
