@@ -17,7 +17,7 @@ export class TableComponent implements OnInit {
   public headerPage = 1;
   public totalPages;
   public searchData: string;
-  private filters = true;
+  public filters = true;
 
   constructor(private tableService: TableService, private spinner: NgxSpinnerService) { }
 

@@ -5,7 +5,6 @@
 export const environment = {
   production: false,
   // baseUrl: 'http://apidevelop-env.ue8ejpc83f.us-west-2.elasticbeanstalk.com/',
-  baseUrl: 'https://shipments-api.osc-fr1.scalingo.io/',
 };
 
 /*

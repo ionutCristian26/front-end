@@ -7,12 +7,13 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class TableService {
+  public baseUrl = 'https://shipments-api.osc-fr1.scalingo.io/';
 
   constructor(private http: HttpClient) { }
 
   loadData(type: string, page: number) {
-    
-    return this.http.get(environment.baseUrl + `manage/${ type }?page=${ page }`).pipe(map(res => {
+
+    return this.http.get(this.baseUrl + `manage/${ type }?page=${ page }`).pipe(map(res => {
       return res;
     }, err => {
       return err;
@@ -21,8 +22,8 @@ export class TableService {
 
   search(searchData: string, type: string, page: number) {
     console.log(searchData);
-    
-    return this.http.get(environment.baseUrl + `manage/${ type }?page=${ page }&search=${ searchData }`).pipe(map(res => {
+
+    return this.http.get(this.baseUrl + `manage/${ type }?page=${ page }&search=${ searchData }`).pipe(map(res => {
       return res;
     }, err => {
       return err;

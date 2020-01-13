@@ -9,17 +9,18 @@ import { map } from 'rxjs/operators';
 
 export class AuthService {
 
+  public baseUrl = 'https://shipments-api.osc-fr1.scalingo.io/';
   constructor(private http: HttpClient) { }
 
   register(user) {
-    return this.http.post(environment.baseUrl + 'account/register', user);
+    return this.http.post(this.baseUrl + 'account/register', user);
   }
 
   login(user) {
     let header = new HttpHeaders();
     header.append('Content-Type', 'aplication/x-www-form-urlencoded')
 
-    return this.http.post(environment.baseUrl + 'oauth2/generate', user, {headers:header});
+    return this.http.post(this.baseUrl + 'oauth2/generate', user, {headers: header});
   }
 
   setUser(user) {
