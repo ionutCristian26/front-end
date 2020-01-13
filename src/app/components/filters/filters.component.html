@@ -1,0 +1,66 @@
+<div class="uk-container uk-animation-fade row" style="margin-top: 15px; margin-left: 17px">
+  <div class="filter col">
+    <div class="filterTitle">
+      <span><span uk-icon="lock" style="float: left; margin-right: 5px"></span>Date Range</span>
+    </div>
+    <div class="filterBody">
+      <ul class="uk-list">
+        <li>
+          <input type="date" data-uk-datepicker="{format:'DD.MM.YYYY'}" [(ngModel)]="date" (change)="showDate()">
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="filter col">
+    <div class="filterTitle">
+      <span><span uk-icon="lock" style="float: left; margin-right: 5px"></span>Shipment Origin</span>
+    </div>
+    <div class="filterBody">
+      <ul class="uk-list">
+        <li><label><input class="uk-checkbox" type="checkbox"> Category 1</label></li>
+        <li><label><input class="uk-checkbox" type="checkbox"> Category 2</label></li>
+        <li><label><input class="uk-checkbox" type="checkbox"> Category 1</label></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="filter  col">
+    <div class="filterTitle">
+      <span><span uk-icon="lock" style="float: left; margin-right: 5px"></span>Shipment Destination</span>
+    </div>
+    <div class="filterBody">
+      <ul class="uk-list">
+        <li>List item 1</li>
+        <li>List item 2</li>
+        <li>List item 3</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="filter col">
+    <div class="filterTitle">
+      <span><span uk-icon="lock" style="float: left; margin-right: 5px"></span>Unloading Name</span>
+    </div>
+    <div class="filterBody">
+      <ul class="uk-list">
+        <li>List item 1</li>
+        <li>List item 2</li>
+        <li>List item 3</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="filter col">
+    <div class="filterTitle">
+      <span><span uk-icon="lock" style="float: left; margin-right: 5px"></span>Landing Name</span>
+    </div>
+    <div class="filterBody">
+      <ul class="uk-list">
+        <li>List item 1</li>
+        <li>List item 2</li>
+        <li>List item 3</li>
+      </ul>
+    </div>
+  </div>
+</div>

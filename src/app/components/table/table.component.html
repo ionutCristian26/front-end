@@ -1,0 +1,92 @@
+<ngx-spinner
+  bdOpacity=0.9
+  bdColor="rgba(51,51,51,0.84)"
+  size="medium"
+  color="#fff"
+  type="ball-atom"
+  [fullScreen]="true">
+  <p style="color: white"> Loading... </p>
+</ngx-spinner>
+
+<app-header (emitType)="getData($event)"></app-header>
+
+<app-search (searchEmitter)="search($event)" (filterShow)="showFilters($event)"></app-search>
+
+<app-filters id="filters" [hidden]="filters"></app-filters>
+
+<div class="header uk-width-1-1 uk-animation-fade" uk-height-viewport>
+
+  <div style="padding: 5px; cursor: pointer; margin-bottom: 10px;">
+    <span uk-icon="icon: list"></span><span style="margin-left: 4px;">Showing {{ totalRecords }} companies</span>
+  </div>
+
+  <div class="uk-container uk-animation-fade uk-width-1-1@m uk-card" style="background: transparent ">
+    <app-table-header></app-table-header>
+<!--    <ul class="uk-pagination">-->
+<!--      <li (click)="prevPage()"><a><span class="uk-margin-small-right" uk-pagination-previous></span> Previous</a></li>-->
+<!--      <span style="margin-left: 20px"><input class="uk-input" type="number" [value]="headerPage"-->
+<!--                                             style="height: 5vh; width: 6vw;" (change)="jumpToPage($event)"></span>-->
+<!--      <li class="uk-margin-auto-left" (click)="nextPage()"><a>Next <span class="uk-margin-small-left"-->
+<!--                                                                         uk-pagination-next></span></a></li>-->
+<!--    </ul>-->
+    <div class="uk-grid-small uk-child-width-expand@s uk-overflow-auto" uk-grid >
+      <table class="uk-table uk-table-justify" *ngIf="this.type !== 'shipments'">
+        <thead>
+        <tr>
+          <th>Country</th>
+          <th>Company</th>
+          <th>City</th>
+          <th>State</th>
+          <th>Phone</th>
+          <th>General Email</th>
+          <th>Website</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let item of source">
+          <td ><span *ngIf="item.country">{{ item.country.name }}</span></td>
+          <td>{{ item.companyName }}</td>
+          <td></td>
+          <td></td>
+          <td>{{ item.phone }}</td>
+          <td>{{ item.email }}</td>
+          <td>{{ item.website }}</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="uk-table uk-table-justify" *ngIf="this.type == 'shipments'">
+        <thead>
+        <tr>
+          <th>Exporter</th>
+          <th>Importer</th>
+          <th>Description</th>
+          <th>Origin Country</th>
+          <th>Origin Port</th>
+          <th>Destination Country</th>
+          <th>Destination Port</th>
+          <th>Date</th>
+          <th>Data Set</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let item of source">
+          <td>{{ item.supplier.companyName }}</td>
+          <td>{{ item.buyer.companyName }}</td>
+          <td>{{ item.cargo_description }}</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>{{ item.estimate_arrival_date }}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="pagination">
+      <ngb-pagination [(page)]="headerPage" [pageSize]="10" (pageChange)="change($event)"
+                      [collectionSize]="totalRecords" [maxSize]="5" [boundaryLinks]="true"></ngb-pagination>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+.filter {
+  //line-height: 25%;
+}
+
+.filterTitle {
+  color: #a6a8a9;
+  font-weight: bold;
+}
+
+.filterBody {
+  padding: 20px;
+}
+
+@media only screen and (max-width: 640px) {
+  .filter {
+    width: 100% !important;
+  }
+}

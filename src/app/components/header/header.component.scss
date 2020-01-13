@@ -1,0 +1,24 @@
+.header {
+    background-color: #324860;
+    // height: 20vh;
+    padding: 15px;
+
+    .card {
+        padding: 15px;
+        position: relative;
+        // height: 10vh;
+    }
+}
+
+.uk-checkbox:checked, .uk-checkbox:indeterminate, .uk-radio:checked {
+    background-color: #f0506e;
+}
+.uk-subnav-pill > .uk-active > a {
+  background-color: #fff;
+  color: black;
+}
+
+.uk-subnav-pill>a {
+  background-color: #75808e;
+}
+

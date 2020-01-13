@@ -1,0 +1,45 @@
+<div class="uk-section uk-section-muted uk-flex uk-flex-middle uk-animation-fade" uk-height-viewport>
+	<div class="uk-width-1-1">
+		<div class="uk-container">
+			<div class="uk-grid-margin uk-grid uk-grid-stack" uk-grid>
+				<div class="uk-width-1-1@m">
+					<div class="uk-margin uk-width-large uk-margin-auto uk-card uk-card-default uk-card-body uk-box-shadow-large">
+						<h3 class="uk-card-title uk-text-center">Register</h3>
+						<form [formGroup]="registerForm" (ngSubmit)="register(registerForm.value)">
+							<div class="uk-margin">
+								<div class="uk-inline uk-width-1-1">
+									<span class="uk-form-icon" uk-icon="icon: mail"></span>
+									<input class="uk-input uk-form-large" type="text" placeholder="Email" formControlName="email" [ngClass]="{ 'is-invalid': submitted &&  registerForm.get('email').invalid}">
+								</div>
+								<span *ngIf="registerForm.get('email').errors && submitted">
+									<p *ngIf="registerForm.get('email').errors.required" class="error">*Email is required</p>
+									<p *ngIf="registerForm.get('email').errors.email" class="error">*Email is invalid</p>
+								</span>
+							</div>
+							<div class="uk-margin">
+								<div class="uk-inline uk-width-1-1">
+									<span class="uk-form-icon" uk-icon="icon: lock"></span>
+									<input class="uk-input uk-form-large" type="password" placeholder="Password" formControlName="password">	
+								</div>
+								<span *ngIf="registerForm.get('password').errors && submitted">
+									<p *ngIf="registerForm.get('password').errors.required" class="error">*Password is required</p>
+									<p *ngIf="registerForm.get('password').errors.minlength" class="error">*Password is too short</p>
+									<p *ngIf="registerForm.get('password').errors.maxlength" class="error">*Password is too long</p>
+								</span>
+                            </div>
+                            <div class="uk-margin">
+								<div class="uk-inline uk-width-1-1">
+									<span class="uk-form-icon" uk-icon="icon: lock"></span>
+									<input class="uk-input uk-form-large" type="password" placeholder="Confirm Password" formControlName="passwordConfirm">	
+								</div>
+							</div>
+							<div class="uk-margin">
+								<button class="uk-button uk-button-danger uk-button-large uk-width-1-1" type="submit">Register</button>
+                            </div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
