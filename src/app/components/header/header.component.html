@@ -4,11 +4,11 @@
 <!--            <span uk-icon="icon: list"></span><span style="margin-left: 4px;">Filter Database</span>-->
 <!--        </div>-->
 <!--        <div class="uk-card uk-card-default uk-card-body uk-width-1-1@m card">-->
-            <div class="uk-container uk-text-center">
-              <ul class="uk-subnav uk-subnav-pill" uk-switcher>
-                <li (click)="getData('shipments')"><a href="#">shipments</a></li>
-                <li (click)="getData('buyer')"><a href="#">buyers</a></li>
-                <li (click)="getData('supplier')"><a href="#">suppliers</a></li>
+            <div class="uk-container">
+              <ul class="uk-subnav uk-subnav-pill navItems" uk-switcher>
+                <li class="uk-text-center item" (click)="getData('shipments')"><a href="#" class="uk-text-center">shipments</a></li>
+                <li class="uk-text-center item" (click)="getData('buyer')"><a href="#">buyers</a></li>
+                <li class="uk-text-center item" (click)="getData('supplier')"><a href="#">suppliers</a></li>
               </ul>
 <!--                <div class="uk-grid-small uk-child-width-expand@s" uk-grid>-->
 <!--                    <select class="uk-select uk-width-1-6 " id="form-stacked-select" style="width: 150px">-->

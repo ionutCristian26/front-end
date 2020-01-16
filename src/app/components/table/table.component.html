@@ -31,7 +31,7 @@
 <!--                                                                         uk-pagination-next></span></a></li>-->
 <!--    </ul>-->
     <div class="uk-grid-small uk-child-width-expand@s uk-overflow-auto" uk-grid >
-      <table class="uk-table uk-table-justify" *ngIf="this.type !== 'shipments'">
+      <table class="uk-table uk-table-divider uk-table-hover uk-table-justify" *ngIf="this.type !== 'shipments'">
         <thead>
         <tr>
           <th>Country</th>
@@ -56,7 +56,7 @@
         </tbody>
       </table>
 
-      <table class="uk-table uk-table-justify" *ngIf="this.type == 'shipments'">
+      <table class="uk-table uk-table-divider uk-table-hover uk-table-justify" *ngIf="this.type == 'shipments'">
         <thead>
         <tr>
           <th>Exporter</th>

@@ -1,20 +1,33 @@
 .searchBox {
   border: 1px solid #999;
-  width: 300px;
+  width: 450px;
+  height: 35px !important;
+  border-radius: 3px;
+}
+
+.searchBox:focus {
+  border: 1px solid #334961;
 }
 
 .countrySelect {
   margin-left: 10px;
   width: 170px !important;
-  height: 29px !important;
+  //height: 29px !important;
+  height: 35px !important;
+  border-radius: 3px;
+
 }
+
 
 .searchButton {
   margin-left: 10px;
   width: 140px !important;
-  height: 29px !important;
+  //height: 29px !important;
   line-height: 25%;
   background-color: #334961;
+  height: 35px !important;
+  border-radius: 3px;
+
 }
 
 .filterButton {
@@ -23,6 +36,10 @@
   height: 29px !important;
   line-height: 25%;
   background-color: #334961;
+  width: 146px !important;
+  height: 35px !important;
+  border-radius: 3px;
+
 
   span {
     font-size: 12px;

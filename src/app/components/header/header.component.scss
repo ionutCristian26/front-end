@@ -1,7 +1,7 @@
 .header {
     background-color: #324860;
     // height: 20vh;
-    padding: 15px;
+    padding-top: 15px;
 
     .card {
         padding: 15px;
@@ -18,7 +18,29 @@
   color: black;
 }
 
-.uk-subnav-pill>a {
+.uk-subnav-pill > a {
   background-color: #75808e;
 }
 
+.navItems {
+  a {
+    padding: 12px;
+  }
+
+  li {
+    width: 150px;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .navItems {
+    li {
+      width: 120px;
+    }
+    a {
+      padding: 9px;
+    }
+  }
+
+
+}

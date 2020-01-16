@@ -1,8 +1,8 @@
 .header {
-    //background-color: #fff;
-    // height: 20vh;
-    padding: 15px;
-    margin-top: 25px;
+  //background-color: #fff;
+  // height: 20vh;
+  padding: 15px;
+  margin-top: 25px;
 }
 
 //.uk-subnav-pill > .uk-active > a {
@@ -18,10 +18,11 @@
 //    color: #fff;
 //}
 //
-//.uk-table tr:hover {
-//    cursor: pointer;
-//}
+.uk-table tr:hover {
+  cursor: pointer;
+  background-color: #f8f8f8;
+}
 
 .pagination {
-    justify-content: center;
+  justify-content: center;
 }
