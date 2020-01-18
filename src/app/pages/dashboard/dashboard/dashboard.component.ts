@@ -13,16 +13,4 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
   }
-
-  storeSearch($event) {
-    this.search = $event;
-    console.log(this.search);
-    this.tableService.loadData('buyer', 1).subscribe(res => {
-      console.log(res);
-    }, err => {
-      console.log(err);
-    } )
-    
-  }
-
 }
