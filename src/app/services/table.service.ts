@@ -11,19 +11,16 @@ export class TableService {
 
   constructor(private http: HttpClient) { }
 
-  loadData(type: string, page: number) {
-
-    return this.http.get(this.baseUrl + `manage/${ type }?page=${ page }`).pipe(map(res => {
+  loadData(type: string, page: number, sizeTable: number) {
+    return this.http.get(this.baseUrl + `manage/${ type }?page=${ page }&_limit=${sizeTable}`).pipe(map(res => {
       return res;
     }, err => {
       return err;
     }));
   }
 
-  search(searchData: string, type: string, page: number) {
-    console.log(searchData);
-
-    return this.http.get(this.baseUrl + `manage/${ type }?page=${ page }&search=${ searchData }`).pipe(map(res => {
+  search(searchData: string, type: string, page: number, sizeTable: number) {
+    return this.http.get(this.baseUrl + `manage/${ type }?page=${ page }&search=${ searchData }&_limit=${sizeTable}`).pipe(map(res => {
       return res;
     }, err => {
       return err;
