@@ -34,6 +34,7 @@
       <table class="uk-table uk-table-divider uk-table-hover uk-table-justify" *ngIf="this.type !== 'shipments'">
         <thead>
         <tr>
+          <th>Id.</th>
           <th>Country</th>
           <th>Company</th>
           <th>City</th>
@@ -45,6 +46,7 @@
         </thead>
         <tbody>
         <tr *ngFor="let item of source">
+          <td>{{ item.id }}</td>
           <td ><span *ngIf="item.country">{{ item.country.name }}</span></td>
           <td>{{ item.companyName }}</td>
           <td></td>
@@ -59,6 +61,7 @@
       <table class="uk-table uk-table-divider uk-table-hover uk-table-justify" *ngIf="this.type == 'shipments'">
         <thead>
         <tr>
+          <th>Id.</th>
           <th>Exporter</th>
           <th>Importer</th>
           <th>Description</th>
@@ -72,6 +75,7 @@
         </thead>
         <tbody>
         <tr *ngFor="let item of source">
+          <td>{{ item.id }}</td>
           <td><span *ngIf="item.supplier">{{ item.supplier.companyName }}</span></td>
           <td><span *ngIf="item.buyer">{{ item.buyer.companyName }}</span></td>
           <td>{{ item.cargo_description }}</td>
