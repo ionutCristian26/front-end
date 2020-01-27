@@ -1,0 +1,26 @@
+.tableHeader {
+  display: flex;
+
+  .tableDetails {
+    padding: 15px;
+    color: gray;
+
+    h4 {
+      color: #324860;
+    }
+  }
+
+  .tableHeaderInputs {
+    padding: 15px;
+    float: right;
+    width: 63%;
+    justify-content: right;
+    text-align: right;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .tableDetails {
+    width: 100% !important;
+  }
+}

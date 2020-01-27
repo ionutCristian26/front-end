@@ -27,19 +27,16 @@ export class TableComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getData(this.type, this.headerPage);
+    this.getData(this.type, this.headerPage, this.sizeTable);
   }
 
-  getData(type: string, page = 1, sizeTable = 20) {
-    console.log(type);
+  getData(type: string, page = 1, sizeTable) {
     this.type = type;
     this.spinner.show();
     this.tableService.loadData(type, page, sizeTable).subscribe(res => {
       this.source = res['_embedded']['Source'];
       this.totalRecords = res['_total'];
       this.totalPages = res['_total_pages'];
-      console.log(this.totalPages);
-
       this.spinner.hide();
     }, err => {
       this.spinner.hide();
@@ -47,34 +44,13 @@ export class TableComponent implements OnInit {
     });
   }
 
-  nextPage() {
-    if (this.headerPage < this.totalPages) {
-      this.headerPage++;
-      this.getData(this.type, this.headerPage);
-    }
-  }
-
-  prevPage() {
-    if (this.headerPage > 1) {
-      this.headerPage--;
-      this.getData(this.type, this.headerPage);
-    }
-  }
-
   change($event: number) {
     this.headerPage = $event;
     this.getData(this.type, this.headerPage, this.sizeTable);
   }
 
-  jumpToPage($event) {
-    this.headerPage = $event.target.value;
-    this.getData(this.type, this.headerPage);
-  }
-
   search($event) {
     this.searchData = $event.value;
-    console.log($event);
-
     this.spinner.show();
     this.tableService.search(this.searchData, this.type, this.headerPage, this.sizeTable).subscribe(res => {
       console.log(res);
@@ -101,5 +77,26 @@ export class TableComponent implements OnInit {
   redirect(website: any) {
     console.log(website);
     this.router.navigate([website]);
+  }
+
+  resizeDescription(description: string) {
+    console.log(description);
+    if (description) {
+      let val;
+      const returnVal = [];
+      val = description.split(' ');
+      if (val.length > 38) {
+
+      }
+      // console.log(val);
+      val.forEach((el, key) => {
+        if (key < 45) {
+          returnVal.push(el);
+        } else {
+          return;
+        }
+      });
+      return returnVal;
+    }
   }
 }

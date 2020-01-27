@@ -8,7 +8,7 @@
   <p style="color: white"> Loading... </p>
 </ngx-spinner>
 
-<app-header (emitType)="getData($event)"></app-header>
+<app-header (emitType)="getData($event,1 , sizeTable)"></app-header>
 
 <app-search (searchEmitter)="search($event)" (filterShow)="showFilters($event)"></app-search>
 
@@ -16,20 +16,14 @@
 
 <div class="header uk-width-1-1 uk-animation-fade" uk-height-viewport>
 
-  <div style="padding: 5px; cursor: pointer; margin-bottom: 10px;">
-    <span uk-icon="icon: list"></span><span style="margin-left: 4px;">Showing {{ totalRecords }} companies</span>
-  </div>
+<!--  <div style="padding: 5px; cursor: pointer; margin-bottom: 10px;">-->
+<!--    <span uk-icon="icon: list"></span><span style="margin-left: 4px;">Showing {{ totalRecords }} companies</span>-->
+<!--  </div>-->
 
   <div class="uk-container uk-animation-fade uk-width-1-1@m uk-card" style="background: transparent ">
 <!--    Todo-->
-    <app-table-header></app-table-header>
-<!--    <ul class="uk-pagination">-->
-<!--      <li (click)="prevPage()"><a><span class="uk-margin-small-right" uk-pagination-previous></span> Previous</a></li>-->
-<!--      <span style="margin-left: 20px"><input class="uk-input" type="number" [value]="headerPage"-->
-<!--                                             style="height: 5vh; width: 6vw;" (change)="jumpToPage($event)"></span>-->
-<!--      <li class="uk-margin-auto-left" (click)="nextPage()"><a>Next <span class="uk-margin-small-left"-->
-<!--                                                                         uk-pagination-next></span></a></li>-->
-<!--    </ul>-->
+    <app-table-header [title]="type" [count]="totalRecords"></app-table-header>
+
     <div class="uk-grid-small uk-child-width-expand@s uk-overflow-auto" uk-grid >
       <table class="uk-table uk-table-divider uk-table-hover uk-table-justify" *ngIf="this.type !== 'shipments'">
         <thead>
