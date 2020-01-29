@@ -11,21 +11,38 @@
   </div>
 
   <div class="tableHeaderInputs uk-width-1-5 uk-width-1-1@s@s uk-align-right">
-    <div style="float: right; width: 200px">
+    <div style="float: right; width: 210px">
       <div class="uk-margin">
         <select class="uk-select" style="width: 100%; margin-left: 16px;">
-          <option>Option 01</option>
-          <option>Option 02</option>
+          <option selected hidden>Sort By..</option>
+          <option value="1">Arrival Date (newest first)</option>
+          <option value="1">Arrival Date (oldest first)</option>
+          <option value="2">Option 02</option>
         </select>
       </div>
     </div>
-    <div style="float: right; width: 200px; margin-left: 25px">
+    <div style="float: right; width: 210px; margin-left: 25px">
       <div class="uk-margin">
-        <select class="uk-select" style="width: 100%;">
-          <option>Option 01</option>
-          <option>Option 02</option>
-        </select>
+        <div uk-form-custom="target: > * > span:last-child">
+          <select>
+            <option selected hidden>Export Results</option>
+            <option value="1">Option 01</option>
+            <option value="2">Option 02</option>
+            <option value="3">Option 03</option>
+            <option value="4">Option 04</option>
+          </select>
+          <button class="uk-button uk-button-default" type="button" tabindex="-1">
+            <span uk-icon="icon: download"></span>
+            <span></span>
+          </button>
+        </div>
       </div>
+<!--      <div class="uk-margin">-->
+<!--        <select class="uk-select" style="width: 100%;">-->
+<!--          <option selected hidden>&#xe258; Export Results</option>-->
+<!--          <option>Option 02</option>-->
+<!--        </select>-->
+<!--      </div>-->
     </div>
   </div>
 </div>
