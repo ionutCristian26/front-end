@@ -9,7 +9,7 @@ export class SearchComponent implements OnInit {
   @Output() searchEmitter: EventEmitter<any> = new EventEmitter<any>();
   @Output() filterShow: EventEmitter<any> = new EventEmitter<any>();
 
-  public filters = true;
+  public filters = false;
 
   constructor() { }
 
